@@ -1,4 +1,4 @@
-describe 'Artist Methods' do
+describe "Artist Methods" do
   before do
     prince = Artist.create(name: "Prince")
     song = Song.create(name: "Super Hip Music")
@@ -7,17 +7,17 @@ describe 'Artist Methods' do
     song.save
     prince.songs << song
   end
-  
-  describe '#get_genre_of_first_song' do
-    it 'returns the genre of the artists first saved song' do
+
+  describe "#get_genre_of_first_song" do
+    it "returns the genre of the artists first saved song" do
       prince = Artist.find_by(name: "Prince")
       expect(prince.get_genre_of_first_song).to be_a(Genre)
       expect(prince.get_genre_of_first_song.name).to eq("Soul")
     end
   end
 
-  describe '#song_count' do
-    it '#song_count' do
+  describe "#song_count" do
+    it "#song_count" do
       prince = Artist.find_by(name: "Prince")
       prince.songs.create(name: "FUNKNROLL")
       prince.songs.create(name: "Little Red")
@@ -27,8 +27,8 @@ describe 'Artist Methods' do
     end
   end
 
-  describe '#genre_count' do
-    it 'returns the number of genres associated with the artist' do
+  describe "#genre_count" do
+    it "returns the number of genres associated with the artist" do
       prince = Artist.find_by(name: "Prince")
       expect(prince.genre_count).to eq(1)
     end

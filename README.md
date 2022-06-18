@@ -172,7 +172,6 @@ class Artist
   has_many :genres, through: :songs
 
   def get_first_song
-
   end
 end
 ```
